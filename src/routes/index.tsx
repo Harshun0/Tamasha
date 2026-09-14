@@ -257,29 +257,17 @@ function Tamasha() {
           muted
           loop
           playsInline
-          preload="auto"
+          preload="metadata"
+          poster="https://res.cloudinary.com/drvug594q/image/upload/q_auto,f_auto,w_1280/v1789412928/Tamasha_landing_page_build_2K_20260915003456-removebg-preview_1_yh1k7v.png"
+          src={
+            typeof window !== "undefined" && window.innerWidth < 768
+              ? "https://res.cloudinary.com/drvug594q/video/upload/q_auto,vc_auto,w_720/v1789409923/Deepika_Padukone_Ranbir_Kapoor_s_WEIRD_Flirting_in_Tamasha_-_Netflix_India_Shorts_1080p_h264_izfo1y.mp4"
+              : "https://res.cloudinary.com/drvug594q/video/upload/q_auto,vc_auto,w_1280/v1789410546/videoplayback_t1ygnj.mp4"
+          }
           className="absolute inset-0 h-[115%] w-full object-cover"
           style={{ transform: `translateY(${parallaxY}px)`, top: "-7.5%" }}
           aria-hidden="true"
-        >
-          <source
-            src="https://res.cloudinary.com/drvug594q/video/upload/v1789409923/Deepika_Padukone_Ranbir_Kapoor_s_WEIRD_Flirting_in_Tamasha_-_Netflix_India_Shorts_1080p_h264_izfo1y.mp4"
-            media="(max-width: 767px)"
-            type="video/mp4"
-          />
-          <source
-            src="https://res.cloudinary.com/drvug594q/video/upload/v1789410546/videoplayback_t1ygnj.mp4"
-            media="(min-width: 768px)"
-            type="video/mp4"
-          />
-          <img
-            src={heroCliffs}
-            alt="Illustrated sunset coastline with cliffs and palm trees"
-            width={1920}
-            height={1152}
-            className="absolute inset-0 h-full w-full object-cover"
-          />
-        </video>
+        />
         <div className="absolute inset-0 bg-ink/55" />
 
         {/* Hero content — staggered entrance */}
