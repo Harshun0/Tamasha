@@ -1,0 +1,148 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * TAMASHA design system — vintage travel poster x indie Bollywood.
+ * All colors are oklch semantic tokens. Never hardcode colors in components.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-mustard: var(--mustard);
+  --color-teal: var(--teal);
+  --color-coral: var(--coral);
+  --color-cream: var(--cream);
+  --color-ink: var(--ink);
+  --font-display: var(--font-display);
+  --font-sans: var(--font-body);
+}
+
+:root {
+  --radius: 1rem;
+
+  --mustard: oklch(0.842 0.139 84.5);
+  --teal: oklch(0.475 0.072 207);
+  --coral: oklch(0.687 0.146 43);
+  --cream: oklch(0.964 0.031 90);
+  --ink: oklch(0.271 0.032 250);
+
+  --background: var(--cream);
+  --foreground: var(--ink);
+  --card: oklch(0.985 0.016 90);
+  --card-foreground: var(--ink);
+  --popover: var(--cream);
+  --popover-foreground: var(--ink);
+  --primary: var(--teal);
+  --primary-foreground: var(--cream);
+  --secondary: var(--mustard);
+  --secondary-foreground: var(--ink);
+  --muted: oklch(0.93 0.028 88);
+  --muted-foreground: oklch(0.48 0.03 250);
+  --accent: var(--coral);
+  --accent-foreground: var(--cream);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: var(--cream);
+  --border: oklch(0.85 0.04 85);
+  --input: oklch(0.85 0.04 85);
+  --ring: var(--coral);
+
+  --font-display: "Caveat", ui-serif, cursive;
+  --font-body: "Poppins", ui-sans-serif, system-ui, sans-serif;
+
+  --shadow-scrap: 0 14px 30px -14px oklch(0.271 0.032 250 / 0.45);
+  --shadow-lift: 0 22px 45px -18px oklch(0.271 0.032 250 / 0.55);
+  --gradient-sunset: linear-gradient(135deg, var(--mustard), var(--coral));
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-body);
+  }
+}
+
+@utility font-display {
+  font-family: var(--font-display);
+}
+
+@utility shadow-scrap {
+  box-shadow: var(--shadow-scrap);
+}
+
+@utility shadow-lift {
+  box-shadow: var(--shadow-lift);
+}
+
+@utility label-caps {
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+@utility reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.7s ease-out,
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@utility reveal-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@utility paper-edge {
+  mask-image: radial-gradient(circle at 50% 0, transparent 0 0, black 0);
+}
+
+/* Typewriter cursor blink */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+/* Hero scroll-hint line pulse */
+@keyframes scrollPulse {
+  0%   { transform: scaleY(1);   opacity: 0.4; }
+  50%  { transform: scaleY(0.4); opacity: 0.1; }
+  100% { transform: scaleY(1);   opacity: 0.4; }
+}
