@@ -219,16 +219,16 @@ function Tamasha() {
             <img
               src="https://res.cloudinary.com/drvug594q/image/upload/v1789412928/Tamasha_landing_page_build_2K_20260915003456-removebg-preview_1_yh1k7v.png"
               alt="Tamasha logo"
-              className="h-24 w-auto object-contain"
+              className="h-10 w-auto object-contain sm:h-14"
             />
           </a>
-          <span className="absolute left-1/2 -translate-x-1/2 font-display text-4xl leading-none text-teal">
+          <span className="absolute left-1/2 -translate-x-1/2 font-display text-2xl leading-none text-teal sm:text-4xl">
             Tamasha
           </span>
           <div className="relative">
             <button
               disabled
-              className="cursor-not-allowed rounded-full bg-coral/60 px-5 py-2.5 text-sm font-semibold text-cream/70"
+              className="cursor-not-allowed rounded-full bg-coral/60 px-3 py-1.5 text-xs font-semibold text-cream/70 sm:px-5 sm:py-2.5 sm:text-sm"
             >
               Get Tickets →
             </button>
